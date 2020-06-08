@@ -9,14 +9,12 @@ fn is_palindrome(s: &str) -> bool {
 fn main() {
     let mut max = 0;
 
-    for i in 100..999 {
-        for j in 100..999 {
+    for i in 100..=999 {
+        for j in 100..=999 {
             let prod = i * j;
 
             if is_palindrome(&prod.to_string()) {
-                if max < prod {
-                    max = prod;
-                }
+                max = std::cmp::max(max, prod);
             }
         }
     }
